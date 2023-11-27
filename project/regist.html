@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenZoo</title>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Google material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+   <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  
+
+   <!-- TYPE JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- jQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+
+</head>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #c8b6ff   ;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ee6055;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: auto 125px; /* Center horizontally and add space below */
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #fcefb4;
+            color: #000;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #e9ff70;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm" action="#" method="post">
+        <img src="logo.png" alt="logo" width="40" >
+        <h2>Formulir Pendaftaran</h2>
+        
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="noHp">Nomor HP:</label>
+        <input type="tel" id="noHp" name="noHp" pattern="[0-9]{10,}" placeholder="Contoh: 081234567890" required>
+
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" name="alamat" rows="4" required></textarea>
+
+        <label for="tanggalPemesanan">Tanggal Pemesanan:</label>
+        <input type="date" id="tanggalPemesanan" name="tanggalPemesanan" required>
+
+        <label for="namaPet">Nama Pet:</label>
+        <input type="text" id="namaPet" name="namaPet" required>
+
+        <label for="jenisPaket">Jenis Paket:</label>
+        <select id="jenisPaket" name="jenisPaket" required>
+            <option value="grooming">Grooming</option>
+            <option value="penitipanHarian">Penitipan Harian</option>
+            <option value="perawatanKhusus">Perawatan Khusus</option>
+        </select>
+
+        <button type="button" onclick="daftar()">Daftar</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function daftar() {
+            // Dapatkan nilai dari setiap input
+            var nama = document.getElementById('nama').value;
+            var email = document.getElementById('email').value;
+            var alamat = document.getElementById('alamat').value;
+            var tanggalPemesanan = document.getElementById('tanggalPemesanan').value;
+            var namaPet = document.getElementById('namaPet').value;
+            var jenisPaket = document.getElementById('jenisPaket').value;
+
+            // Buat output
+            var outputText = "Pendaftaran Berhasil!\n\n";
+           
+            // Tampilkan output
+            document.getElementById('output').innerText = outputText;
+        }
+    </script>
+
+</body>
+</html>
